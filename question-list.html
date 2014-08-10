@@ -1,0 +1,28 @@
+﻿<div class="container well">
+    <div class="row">
+
+        <div class="col-md-2">
+            Search: <input ng-model="query" class="form-control" />
+        </div>
+
+        <div class="col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Question list
+                    <a ng-href="#/create" class="btn btn-primary pull-right">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
+
+                <ul class="list-group">
+                    <li ng-repeat="question in questions | filter:query"
+                        class="list-group-item">
+                        <a ng-href="#/questions/{{question.id}}">{{question.title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

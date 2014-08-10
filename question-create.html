@@ -1,0 +1,17 @@
+﻿<div>
+    <form name="createForm">
+        Title:
+        <input type="text" ng-model="question.title" />
+
+        Content:
+        <textarea ng-model="question.content"></textarea>
+        
+        Tags:
+        <input type="text" ng-model="question.tags"/>
+
+        <input type="button" ng-click="save(question, createForm)" value="Create" />
+    </form>
+    {{question.id}}
+    {{question.title}}
+    {{question.content}}
+</div>
