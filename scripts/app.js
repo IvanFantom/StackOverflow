@@ -14,7 +14,7 @@ app.config(['$routeProvider',
                 controller: 'QuestionListCtrl'
             }).
             when('/questions/:questionId', {
-                templateUrl: 'question-detail.html',
+                templateUrl: 'question-view.html',
                 controller: 'QuestionDetailCtrl'
             }).
             when('/create', {

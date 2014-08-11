@@ -24,8 +24,8 @@ appControllers.controller('QuestionDetailCtrl', ['$scope', '$routeParams', 'Ques
     }
 ]);
 
-appControllers.controller('QuestionCreateCtrl', ['$scope', '$routeParams', 'Question',
-    function ($scope, $location, Question) {
+appControllers.controller('QuestionCreateCtrl', ['$scope', 'Question',
+    function ($scope, Question) {
         $scope.question = new Question();
         angular.extend($scope.question, {
             title: '',
@@ -36,10 +36,10 @@ appControllers.controller('QuestionCreateCtrl', ['$scope', '$routeParams', 'Ques
         $scope.save = function () {
             $scope.question.$save(
                 function (response) {
-                    alert(response);
+                    alert('success');
                 },
                 function (response) {
-                    alert(response);
+                    alert('fail');
                 });
         }
     }

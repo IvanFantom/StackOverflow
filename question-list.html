@@ -1,11 +1,16 @@
 ﻿<div class="container well">
     <div class="row">
-
-        <div class="col-md-2">
-            Search: <input ng-model="query" class="form-control" />
+        
+        <div class="form-group col-md-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-filter"></span>
+                </span>
+                <input ng-model="query" class="form-control" placeholder="Type question's title or tags"/>
+            </div>
         </div>
 
-        <div class="col-md-10">
+        <div class="col-md-9">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Question list

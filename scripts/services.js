@@ -7,15 +7,6 @@ appServices.constant('MONGOLAB_CONFIG', {
     DB_NAME: 'stackoverflowdb'
 });
 
-//appServices.factory('Question', ['$resource',
-//    function ($resource) {
-//        return $resource('questions/questions.json', {}, {
-//            query: { method: 'GET', params: { questionId: 'questions' }, isArray: true },
-//            save: { method: 'POST' }
-//        });
-//    }
-//]);
-
 appServices.factory('Question', ['$mongolabResourceHttp',
     function($mongolabResourceHttp) {
         return $mongolabResourceHttp('questions');
