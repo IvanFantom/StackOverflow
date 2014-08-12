@@ -3,7 +3,7 @@
         <h1>{{question.title}}</h1>
         <p>{{question.content}}</p>
         <div>
-            <span class="badge">Asked 2014-08-11 20:47:04</span>
+            <span class="badge">{{question.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
             <div class="pull-right">
                 <span ng-repeat="tag in question.tags"
                     class="label label-info">{{tag}}</span>
@@ -19,11 +19,18 @@
                     </div>
 
                     <div class="col-md-2">
-                        <span class="badge">2014-08-11 20:47:04</span>
+                        <span class="badge">{{comment.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-warning">add comment</button>
+            <div class="form-group">
+                <div ng-show="showme" class="col-md-7">
+                    <input ng-model="comment.content" class="form-control" type="text" />
+                </div>
+                <button ng-click="showme=true" ng-hide="showme" class="btn btn-warning">add comment</button>
+                <button ng-click="showme=false; comment={}" ng-show="showme" class="btn btn-default">cancel</button>
+                <button ng-click="addCommentToQuestion(); showme=false" ng-show="showme" class="btn btn-primary">save</button>
+            </div>
         </div>
 
         <hr />
@@ -37,7 +44,7 @@
                     </div>
 
                     <div class="col-md-2">
-                        <span class="badge">2014-08-11 20:47:04</span>
+                        <span class="badge">{{answer.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
                     </div>
                 </div>
                 <button class="btn btn-warning">add comment</button>
@@ -55,23 +62,9 @@
                 </div>
 
                 <div class="form-group pull-right">
-                    <input class="btn btn-primary" type="button" ng-click="create(answer)" value="Post your answer" />
+                    <input class="btn btn-primary" type="button" ng-click="addAnswer()" value="Add new answer" />
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
 </div>
-
-<!--<div class="container well">
-    <div class="form-group">
-        <h1 class="control-label">{{question.title}}</h1>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label">{{question.content}}</label>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label">{{question.tags}}</label>
-    </div>
-</div>-->
