@@ -1,20 +1,7 @@
 (function () {
     'use strict';
 
-    var appServices = angular.module('appServices', ['ngResource', 'mongolabResourceHttp']);
-
-    appServices.constant('MONGOLAB_CONFIG', {
-        API_KEY: 'Qi1Nfoc0NlGpR0b0AvK2kXC38vOa-cVt',
-        DB_NAME: 'stackoverflowdb'
-    });
-
-    appServices.factory('Question', ['$mongolabResourceHttp',
-        function ($mongolabResourceHttp) {
-            return $mongolabResourceHttp('questions');
-        }
-    ]);
-
-    appServices.factory('uuid', [
+    angular.module('stackoverflow').factory('uuid', [
         function () {
             function s4() {
                 return Math.floor((1 + Math.random()) * 0x10000)
