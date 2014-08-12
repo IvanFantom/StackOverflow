@@ -3,7 +3,7 @@
         <h1>{{question.title}}</h1>
         <p>{{question.content}}</p>
         <div>
-            <span class="badge">{{question.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+            <span class="badge">Asked {{question.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
             <div class="pull-right">
                 <span ng-repeat="tag in question.tags"
                     class="label label-info">{{tag}}</span>
@@ -25,10 +25,10 @@
             </div>
             <div class="form-group">
                 <div ng-show="showme" class="col-md-7">
-                    <input ng-model="comment.content" class="form-control" type="text" />
+                    <input ng-model="questionComment.content" class="form-control" type="text" />
                 </div>
                 <button ng-click="showme=true" ng-hide="showme" class="btn btn-warning">add comment</button>
-                <button ng-click="showme=false; comment={}" ng-show="showme" class="btn btn-default">cancel</button>
+                <button ng-click="showme=false; questionComment={}" ng-show="showme" class="btn btn-default">cancel</button>
                 <button ng-click="addCommentToQuestion(); showme=false" ng-show="showme" class="btn btn-primary">save</button>
             </div>
         </div>
@@ -47,7 +47,28 @@
                         <span class="badge">{{answer.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
                     </div>
                 </div>
-                <button class="btn btn-warning">add comment</button>
+                <div class="col-md-offset-3">
+                    <h4>Comments</h4>
+                    <div ng-repeat="comment in answer.comments">
+                        <div class="well row">
+                            <div class="col-md-10">
+                                <p>{{comment.content}}</p>
+                            </div>
+
+                            <div class="col-md-2">
+                                <span class="badge">{{comment.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div ng-show="show" class="col-md-7">
+                            <input ng-model="answerComment.content" class="form-control" type="text" />
+                        </div>
+                        <button ng-click="show=true" ng-hide="show" class="btn btn-warning">add comment</button>
+                        <button ng-click="show=false; answerComment={}" ng-show="show" class="btn btn-default">cancel</button>
+                        <button ng-click="addCommentToAnswer(answer.id); show=false" ng-show="show" class="btn btn-primary">save</button>
+                    </div>
+                </div>
             </div>
         </div>
 

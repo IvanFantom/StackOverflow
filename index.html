@@ -5,12 +5,20 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" ng-href="#/questions">Questions/Answers</a>
+            </div>
+        </div>
+    </div>
+
     <div ng-view></div>
-    
+
     <script src="Scripts/libs/angular.js"></script>
     <script src="Scripts/libs/angular-route.js"></script>
     <script src="Scripts/libs/angular-resource.js"></script>
-    
+
     <script src="Scripts/app.js"></script>
     <script src="Scripts/controllers.js"></script>
     <script src="Scripts/filters.js"></script>
