@@ -14,9 +14,14 @@
                     controller: 'QuestionListCtrl'
                 })
                 .state('question', {
-                    url: '/questions/:questionId',
+                    url: '/question/:questionId',
                     templateUrl: 'views/question-view.html',
-                    controller: 'QuestionViewCtrl'
+                    controller: 'QuestionViewCtrl',
+                    //views: {
+                    //    'comments': {
+                    //        templateUrl: 'views/partials/comments.html'
+                    //    }
+                    //}
                 })
                 .state('create', {
                     url: '/create',
