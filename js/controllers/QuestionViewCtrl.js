@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('stackoverflow').controller('QuestionViewCtrl', ['$scope', 'uuid', '$routeParams', 'Question',
-        function ($scope, uuid, $routeParams, Question) {
-            Question.getById($routeParams.questionId,
+    angular.module('stackoverflow').controller('QuestionViewCtrl', ['$scope', 'uuid', '$stateParams', 'Question',
+        function ($scope, uuid, $stateParams, Question) {
+            Question.getById($stateParams.questionId,
                 function (question) {
                     $scope.question = question;
                 },

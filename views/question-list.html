@@ -26,7 +26,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Question list
-                    <a ng-href="#/create" class="btn btn-primary pull-right">
+                    <a ui-sref="create" class="btn btn-primary pull-right">
                         Ask Question <span class="glyphicon glyphicon-question-sign"></span>
                     </a>
                     <div class="clearfix"></div>
@@ -35,7 +35,7 @@
                 <ul class="list-group">
                     <li ng-repeat="question in questions | filter:anything | tagFilter:tagName"
                         class="list-group-item">
-                        <a ng-href="#/questions/{{question._id.$oid}}">{{question.title}}</a>
+                        <a ui-sref="question({questionId:question._id.$oid})">{{question.title}}</a>
                     </li>
                 </ul>
             </div>

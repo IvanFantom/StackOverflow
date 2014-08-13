@@ -1,25 +1,27 @@
 (function () {
     'use strict';
 
-    var app = angular.module('stackoverflow', ['ngRoute', 'mongolabResourceHttp', 'ngTagsInput']);
+    var app = angular.module('stackoverflow', ['ui.router', 'mongolabResourceHttp', 'ngTagsInput']);
 
-    app.config(['$routeProvider',
-        function ($routeProvider) {
-            $routeProvider.
-                when('/questions', {
+    app.config(['$stateProvider', '$urlRouterProvider',
+        function ($stateProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('/questions');
+
+            $stateProvider
+                .state('questions', {
+                    url: '/questions',
                     templateUrl: 'views/question-list.html',
                     controller: 'QuestionListCtrl'
-                }).
-                when('/questions/:questionId', {
+                })
+                .state('question', {
+                    url: '/questions/:questionId',
                     templateUrl: 'views/question-view.html',
                     controller: 'QuestionViewCtrl'
-                }).
-                when('/create', {
+                })
+                .state('create', {
+                    url: '/create',
                     templateUrl: 'views/question-create.html',
                     controller: 'QuestionCreateCtrl'
-                }).
-                otherwise({
-                    redirectTo: '/questions'
                 });
         }
     ]);
