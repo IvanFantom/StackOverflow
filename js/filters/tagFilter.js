@@ -14,7 +14,7 @@
                 var tags = element.tags;
 
                 var passed = tags.some(function (value) {
-                    var lowerCasedValue = value.toLowerCase();
+                    var lowerCasedValue = value.text.toLowerCase();
                     return lowerCasedValue.indexOf(lowerCasedTag) !== -1;
                 });
 

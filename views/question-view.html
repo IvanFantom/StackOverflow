@@ -6,7 +6,7 @@
             <span class="badge">Asked {{question.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
             <div class="pull-right">
                 <span ng-repeat="tag in question.tags"
-                    class="label label-info">{{tag}}</span>
+                    class="label label-info">{{tag.text}}</span>
             </div>
         </div>
 

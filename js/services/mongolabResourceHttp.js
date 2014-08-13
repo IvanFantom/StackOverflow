@@ -54,7 +54,7 @@
                         options = {};
                     }
                     return Resource.query({}, options, cb, errorcb);
-                };
+                }
 
                 Resource.query = function (queryJson, options, successcb, errorcb) {
                     if (typeof (options) === 'function') {
@@ -73,12 +73,12 @@
 
                     var httpPromise = $http.get(url, { params: angular.extend({}, defaultParams, params) });
                     return promiseThen(httpPromise, successcb, errorcb, true);
-                };
+                }
 
                 Resource.getById = function (id, successcb, errorcb) {
                     var httpPromise = $http.get(url + '/' + id, { params: defaultParams });
                     return promiseThen(httpPromise, successcb, errorcb);
-                };
+                }
 
                 Resource.getByObjectIds = function (ids, successcb, errorcb) {
                     var qin = [];
@@ -86,7 +86,7 @@
                         qin.push({ $oid: id });
                     });
                     return Resource.query({ _id: { $in: qin } }, successcb, errorcb);
-                };
+                }
 
                 //instance methods
 
@@ -96,22 +96,22 @@
                     } else if (this._id) {
                         return this._id;
                     }
-                };
+                }
 
                 Resource.prototype.$save = function (successcb, errorcb) {
                     var httpPromise = $http.post(url, this, { params: defaultParams });
                     return promiseThen(httpPromise, successcb, errorcb);
-                };
+                }
 
                 Resource.prototype.$update = function (successcb, errorcb) {
                     var httpPromise = $http.put(url + "/" + this.$id(), angular.extend({}, this, { _id: undefined }), { params: defaultParams });
                     return promiseThen(httpPromise, successcb, errorcb);
-                };
+                }
 
                 Resource.prototype.$remove = function (successcb, errorcb) {
                     var httpPromise = $http['delete'](url + "/" + this.$id(), { params: defaultParams });
                     return promiseThen(httpPromise, successcb, errorcb);
-                };
+                }
 
                 Resource.prototype.$saveOrUpdate = function (savecb, updatecb, errorSavecb, errorUpdatecb) {
                     if (this.$id()) {
@@ -119,7 +119,7 @@
                     } else {
                         return this.$save(savecb, errorSavecb);
                     }
-                };
+                }
 
                 return Resource;
             }

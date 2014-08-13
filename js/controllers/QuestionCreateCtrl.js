@@ -8,8 +8,6 @@
             $scope.save = function () {
                 var question = $scope.question;
                 question.date = new Date();
-                var tags = question.tags.split(' ');
-                question.tags = tags;
 
                 question.$save(
                     function (response) {

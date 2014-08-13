@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('stackoverflow', ['ngRoute', 'mongolabResourceHttp']);
+    var app = angular.module('stackoverflow', ['ngRoute', 'mongolabResourceHttp', 'ngTagsInput']);
 
     app.config(['$routeProvider',
         function ($routeProvider) {
