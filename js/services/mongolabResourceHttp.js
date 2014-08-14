@@ -1,4 +1,6 @@
-(function () {
+(function (angular) {
+    'use strict';
+
     angular.module('mongolabResourceHttp', []).factory('$mongolabResourceHttp', [
         'MONGOLAB_CONFIG', '$http', function (MONGOLAB_CONFIG, $http) {
 
@@ -127,5 +129,5 @@
             return MmongolabResourceFactory;
         }
     ]);
-})();
+})(angular);
 

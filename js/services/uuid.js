@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     'use strict';
 
     angular.module('stackoverflow').factory('uuid', [
@@ -30,4 +30,4 @@
             }
         }
     ]);
-})();
+})(angular);

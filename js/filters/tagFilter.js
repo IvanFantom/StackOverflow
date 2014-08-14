@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     'use strict';
 
     angular.module('stackoverflow').filter('tagFilter', function () {
@@ -24,4 +24,4 @@
             return result;
         }
     });
-})();
+})(angular);

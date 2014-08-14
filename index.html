@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="stackoverflow" xmlns="http://www.w3.org/1999/xhtml">
+<html data-ng-app="stackoverflow" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>[Angular] StackOverflow</title>
 
@@ -10,12 +10,12 @@
     <div class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" ui-sref="questions">Custom Stackoverflow</a>
+                <a class="navbar-brand" data-ui-sref="questions">Custom Stackoverflow</a>
             </div>
         </div>
     </div>
 
-    <div ui-view></div>
+    <div data-ui-view></div>
 
     <script src="js/libs/angular.js"></script>
     <script src="js/libs/angular-ui-router.js"></script>
@@ -25,6 +25,7 @@
     <script src="js/controllers/QuestionListCtrl.js"></script>
     <script src="js/controllers/QuestionCreateCtrl.js"></script>
     <script src="js/controllers/QuestionViewCtrl.js"></script>
+    <script src="js/controllers/QuestionCommentsCtrl.js"></script>
     <script src="js/services/mongolabResourceHttp.js"></script>    
     <script src="js/services/Question.js"></script>
     <script src="js/services/uuid.js"></script>

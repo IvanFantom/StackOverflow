@@ -7,7 +7,7 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon glyphicon-tag"></span>
                     </span>
-                    <input ng-model="tagName" class="form-control" placeholder="Tag name" />
+                    <input data-ng-model="tagName" class="form-control" placeholder="Tag name" />
                 </div>
             </div>
 
@@ -16,7 +16,7 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-filter"></span>
                     </span>
-                    <input ng-model="anything" class="form-control" placeholder="Anything..." />
+                    <input data-ng-model="anything" class="form-control" placeholder="Anything..." />
                 </div>
             </div>
 
@@ -26,16 +26,16 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Question list
-                    <a ui-sref="create" class="btn btn-primary pull-right">
+                    <a data-ui-sref="create" class="btn btn-primary pull-right">
                         Ask Question <span class="glyphicon glyphicon-question-sign"></span>
                     </a>
                     <div class="clearfix"></div>
                 </div>
 
                 <ul class="list-group">
-                    <li ng-repeat="question in questions | filter:anything | tagFilter:tagName"
+                    <li data-ng-repeat="question in questions | filter:anything | tagFilter:tagName"
                         class="list-group-item">
-                        <a ui-sref="question({questionId:question._id.$oid})">{{question.title}}</a>
+                        <a data-ui-sref="question({questionId:question._id.$oid})">{{question.title}}</a>
                     </li>
                 </ul>
             </div>

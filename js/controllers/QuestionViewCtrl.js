@@ -1,8 +1,8 @@
-(function () {
+(function (angular) {
     'use strict';
 
-    angular.module('stackoverflow').controller('QuestionViewCtrl', ['$scope', 'uuid', '$stateParams', 'Question',
-        function ($scope, uuid, $stateParams, Question) {
+    angular.module('stackoverflow').controller('QuestionViewCtrl', ['$scope', '$stateParams', 'Question',
+        function ($scope, $stateParams, Question) {
             Question.getById($stateParams.questionId,
                 function (question) {
                     $scope.question = question;
@@ -12,16 +12,7 @@
                 }
             );
 
-            $scope.questionComment = {};
             $scope.answerComment = {};
-
-            $scope.addCommentToQuestion = function () {
-                var question = $scope.question;
-                var comment = $scope.questionComment;
-                question.addCommentToQuestion(comment);
-
-                $scope.questionComment = {};
-            }
 
             $scope.addCommentToAnswer = function (answerId) {
                 var question = $scope.question;
@@ -40,4 +31,4 @@
             }
         }
     ]);
-})();
+})(angular);

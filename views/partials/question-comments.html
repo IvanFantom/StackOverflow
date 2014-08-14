@@ -1,0 +1,20 @@
+﻿<h4>Comments</h4>
+<div data-ng-repeat="comment in question.comments">
+    <div class="well row">
+        <div class="col-md-10">
+            <p>{{comment.content}}</p>
+        </div>
+
+        <div class="col-md-2">
+            <span class="badge">{{comment.date | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div data-ng-show="showme" class="col-md-7">
+        <input data-ng-model="questionComment.content" class="form-control" type="text" />
+    </div>
+    <button data-ng-click="showme=true" data-ng-hide="showme" class="btn btn-warning">add comment</button>
+    <button data-ng-click="showme=false; questionComment={}" data-ng-show="showme" class="btn btn-default">cancel</button>
+    <button data-ng-click="addCommentToQuestion(); showme=false" data-ng-show="showme" class="btn btn-primary">save</button>
+</div>

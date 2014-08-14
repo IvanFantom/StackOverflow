@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     'use strict';
 
     angular.module('stackoverflow').constant('MONGOLAB_CONFIG', {
@@ -46,4 +46,4 @@
             return self;
         }
     ]);
-})();
+})(angular);

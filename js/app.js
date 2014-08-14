@@ -15,13 +15,16 @@
                 })
                 .state('question', {
                     url: '/question/:questionId',
-                    templateUrl: 'views/question-view.html',
-                    controller: 'QuestionViewCtrl',
-                    //views: {
-                    //    'comments': {
-                    //        templateUrl: 'views/partials/comments.html'
-                    //    }
-                    //}
+                    views: {
+                        '': {
+                            templateUrl: 'views/question-view.html',
+                            controller: 'QuestionViewCtrl'
+                        },
+                        'question-comments@question': {
+                            templateUrl: 'views/partials/question-comments.html',
+                            controller: 'QuestionCommentsCtrl'
+                        }
+                    }
                 })
                 .state('create', {
                     url: '/create',

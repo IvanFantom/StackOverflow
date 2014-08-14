@@ -1,4 +1,4 @@
-(function () {
+(function (angular) {
     'use strict';
 
     angular.module('stackoverflow').controller('QuestionCreateCtrl', ['$scope', '$location', 'Question',
@@ -19,4 +19,4 @@
             }
         }
     ]);
-})();
+})(angular);
